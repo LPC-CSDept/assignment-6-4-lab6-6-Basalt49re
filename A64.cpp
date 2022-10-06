@@ -10,8 +10,10 @@
 
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 using namespace std;
 
+void getListprime(int start,int end);
 //----------
 // Make a line for Function Prototype for getListprime Here
 //----------
@@ -24,12 +26,25 @@ int main()
 	if (begin < end)
 		getListprime(begin, end);
 	else if (begin > end)
-		getListprime();
+		getListprime(2,100);
 	else
-		getListprime(begin);
+		getListprime(begin,100);
 }
-void getListprime(int begin, int end)
+void getListprime(int startNum, int endNum)
 {
-
-	// Complete this function
+    int count = 0;
+for(int i=startNum;i<=endNum;i++)
+{
+    for(int j=2;j<=sqrt(i);j++)
+        {
+        if(i%j==0)
+            count++;
+        }
+        if(count==0&&i!=1)
+        { 
+            cout <<i<<endl;
+            count=0;
+        }
+        count=0;
+}  
 }
